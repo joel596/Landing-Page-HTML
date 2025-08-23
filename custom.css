@@ -1,0 +1,78 @@
+:root{
+  --brand: var(--dl-color-theme-primary2); /* #E65103 */
+  --nav-h: 72px;
+  --ink: #111;
+  --on-dark: #fff;
+}
+
+/* ===== Header / Nav ===== */
+.home-navbar-container{
+  position: sticky; top: 0; z-index: 1000;
+  background: #fff;
+  box-shadow: 0 2px 10px rgba(0,0,0,.05);
+}
+.home-navbar{
+  max-width: 1200px; margin: 0 auto;
+  height: var(--nav-h);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 20px;
+}
+.home-left-side{ display:flex; align-items:center; gap:14px; }
+.home-links-container1{
+  display:flex; align-items:center; gap:28px;
+  margin-left: 12px;           /* fixes “Meticra EngineeringHome” */
+}
+.home-links-container1 a{
+  color: var(--ink); font-weight:600; opacity:.85;
+}
+.home-links-container1 a:hover{ opacity:1; text-decoration: underline; }
+.home-cta-btn1{
+  background:#111; color:#fff; border:none;
+  padding:.75rem 1.25rem; border-radius:999px; font-weight:700;
+}
+.home-cta-btn1:hover{ background:#000; }
+
+/* ===== Hero section ===== */
+#resources.home-home-home{
+  min-height: calc(100vh - var(--nav-h));
+  display:flex; align-items:center; justify-content:center;
+  position:relative;
+  background: url('assets/pexels-tim-diercks-719708976-33520310.jpg') center/cover no-repeat;
+}
+#resources.home-home-home::before{
+  content:""; position:absolute; inset:0;
+  /* clearer image but readable text */
+  background: linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.35));
+}
+.home-content-container1{ position:relative; z-index:1; width:100%; }
+.home-hero-text{
+  max-width: 900px; margin: 0 auto; padding: 0 24px;
+  text-align:center; color: var(--on-dark);
+  display:flex; flex-direction:column; gap:20px;
+}
+.home-heading1{
+  font-weight:800; letter-spacing:-.01em; line-height:1.15;
+  font-size: clamp(32px, 6vw, 64px);
+}
+.home-text10{
+  max-width: 800px; margin: 0 auto; opacity:.92;
+}
+
+/* Better CTA */
+.home-cta-btn2{
+  align-self:center;
+  background: var(--brand); color:#fff; border:none;
+  padding: 1rem 1.75rem; border-radius: 999px; font-weight:700;
+  box-shadow: 0 8px 24px rgba(230,81,3,.35);
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.home-cta-btn2:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 12px 30px rgba(230,81,3,.45);
+}
+
+/* Mobile tweaks */
+@media (max-width: 768px){
+  .home-links-container1, .home-cta-btn1{ display:none; } /* use burger menu */
+  #resources.home-home-home{ min-height: 70vh; }
+}
